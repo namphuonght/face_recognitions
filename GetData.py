@@ -3,15 +3,16 @@ import numpy as np
 import sqlite3
 import os
 
+
 def insertOrUpdate(id, name):
-    conn = sqlite3.connect('E:\data_face_recognition.db')
+    conn = sqlite3.connect(r'E:\data_face_recognition.db')
     query = "SELECT * FROM people WHERE ID="+str(id)
     cusror = conn.execute(query)
     isRecordExit = 0
     for row in cusror:
         isRecordExit = 1
 
-    if(isRecordExit == 0):
+    if isRecordExit == 0:
         query = "INSERT INTO people(ID, Name) VALUES("+str(id) + ", '"+str(name) + "')"
     else:
         query = "UPDATE people SET Name='"+str(name)+"' WHERE ID="+str(id)
