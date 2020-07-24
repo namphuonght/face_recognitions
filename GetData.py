@@ -26,8 +26,8 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_fronta
 cap = cv2.VideoCapture(0)
 
 #insert db
-id = input("Enter your ID: ")
-name = input("Enter your Name: ")
+id = input("NHập ID: ")
+name = input("Nhập tên: ")
 insertOrUpdate(id, name)
 
 sampleNum = 0
@@ -45,7 +45,7 @@ while True:
     cv2.imshow('frame', frame)
     cv2.waitKey(1)
 
-    if sampleNum > 300:
+    if sampleNum > 100:
         break
 
 cap.release()
